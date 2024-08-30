@@ -1,0 +1,11 @@
+[Unit]
+Description=Update cloudflare dns record
+Requires=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/home/al/w/update_cloudflare_dns_record/update_cloudflare_dns_record.sh
+
+[Install]
+WantedBy=network-online.target
