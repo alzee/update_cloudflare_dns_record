@@ -22,10 +22,10 @@ curl -s -X $method $url \
      -H "Content-Type:application/json" \
   --data "{
   \"content\": \"$ip\",
-  \"name\": \"alz.ee\",
+  \"name\": \"$RECORD_NAME\",
   \"proxied\": false,
   \"type\": \"A\",
-  \"comment\": \"aws hk\",
+  \"comment\": \"updated(vm startup): $(date)\",
   \"tags\": [],
   \"ttl\": 1
 }" >> $logfile
