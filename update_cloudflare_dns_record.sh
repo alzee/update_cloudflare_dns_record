@@ -10,15 +10,15 @@
 dir=$(dirname $0)
 . $dir/.env
 
-url="https://api.cloudflare.com/client/v4/zones/$zone_id/dns_records/$record_id"
+url="https://api.cloudflare.com/client/v4/zones/$ZONE_ID/dns_records/$RECORD_ID"
 method=GET
 method=PATCH
 logfile=$dir/cloudflare_dns_record.log
 
-ip=$(curl -s 'https://api.ipify.org')
+ip=$(curl -s $IPCHECKER)
 
 curl -s -X $method $url \
-     -H "Authorization: Bearer $token" \
+     -H "Authorization: Bearer $TOKEN" \
      -H "Content-Type:application/json" \
   --data "{
   \"content\": \"$ip\",
