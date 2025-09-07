@@ -11,7 +11,7 @@ dir=$(dirname $0)
 . $dir/.env
 
 url="https://api.cloudflare.com/client/v4/zones/$ZONE_ID/dns_records/$RECORD_ID"
-method=GET
+# method=GET
 method=PATCH
 logfile=$dir/cloudflare_dns_record.log
 
