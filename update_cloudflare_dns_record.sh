@@ -15,7 +15,7 @@ method=GET
 method=PATCH
 logfile=$dir/cloudflare_dns_record.log
 
-ip=$(curl -s $IPCHECKER)
+ip=$(curl -4 -s $IPCHECKER)
 
 curl -s -X $method $url \
      -H "Authorization: Bearer $TOKEN" \
